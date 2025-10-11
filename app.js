@@ -1,6 +1,9 @@
 require("./xyz.js");
-const {calculateSum}= require("./calculate/sum.js");
-const {calculateMultiply} = require("./calculate/multiply.js");
+// const {calculateSum}= require("./calculate/sum.js");
+// const {calculateMultiply} = require("./calculate/multiply.js");
+
+const {calculateMultiply,calculateSum
+} = require('./calculate');
  
 
 var name = "Namaste NodeJs";

@@ -12,10 +12,10 @@ function calculateSum(a,b){
     console.log(sum);
 }
 console.log(module.exports);
-// module.exports ={
-//     x,
-//     calculateSum,
-// };
+module.exports ={
+    x,
+    calculateSum,
+};
 
-module.exports.x = x;
-module.exports.calculateSum = calculateSum;
+// module.exports.x = x;
+// module.exports.calculateSum = calculateSum;
