@@ -1,5 +1,5 @@
 require("./xyz.js");
-const calculateSum = require("./sum.js");
+const obj= require("./sum.js");
  
 
 var name = "Namaste NodeJs";
@@ -7,6 +7,7 @@ var name = "Namaste NodeJs";
 var a = 10;
 var b = 20;
 
-calculateSum(a,b);
+obj.calculateSum(a,b);
+console.log(obj.x);
 
 console.log(globalThis===global);
