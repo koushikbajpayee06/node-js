@@ -7,6 +7,10 @@ console.log("Hello World");
 var a = 1078698;
 var b = 20986;
 
+//Synchronous
+fs.readFileSync("./file.txt","utf-8");
+console.log("This will execute only after file read");
+
 https.get("https://dummyjson.com/products/1",(res)=>{
     console.log("Fetched Data Successfully");
 });
@@ -14,6 +18,7 @@ https.get("https://dummyjson.com/products/1",(res)=>{
 setTimeout(()=>{
     console.log("setTimeout called after 5 seconds");
 },5000);
+
 
 fs.readFile("./file.txt","utf8",(err,data)=>{
     console.log("File Data: ",data);
