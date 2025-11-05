@@ -1,30 +1,32 @@
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient } = require("mongodb")
 
-const uri = "mongodb+srv://namastedev:1hB9abpWmTbetipq@namastenode.1duep3t.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://namastedev:fsmtGY1IfU6h4Ypp@namastenode.uwpmhgp.mongodb.net/";
+const client = new MongoClient(url);
 
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-  tls: true,
-});
+const dbName = "HelloWorld";
 
-async function main() {
-  try {
-    await client.connect();
-    console.log("✅ Connected successfully to MongoDB Atlas!");
-    const db = client.db("HelloWorld");
-    const collection = db.collection("User");
+async function main(){
+  // Use connect method to connect to the server
+  await client.connect();
+  console.log("Connected successfully to server");
+  const db = client.db(dbName);
+  const collection = db.collection("User");
 
-    const count = await collection.countDocuments();
-    console.log("Total documents:", count);
-  } catch (err) {
-    console.error("❌ Connection failed:", err);
-  } finally {
-    await client.close();
-  }
+  return "done";
 }
 
-main();
+
+main()
+  .then(console.log)
+  .catch(console.error)
+  .finally(() => client.close());
+
+
+
+  // NOTES
+
+  // Go to mongoDB website
+  // Create a free M0 Cluster
+  // Create a User
+  // Get the connection String
+  // Install MongoDB Compass
