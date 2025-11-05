@@ -12,8 +12,23 @@ async function main(){
   const db = client.db(dbName);
   const collection = db.collection("User");
 
-  const findResult = await collection.find({}).toArray();
-  console.log('Found documents =>', findResult);
+  Insert
+
+  const data = {
+    firstName:"Jayeeta",
+    lastName:"Barman",
+    city:"Balurghat",
+    phoneNumber:"9531733485"
+  }
+
+  const insertResult = await collection.insertMany([data]);
+  console.log('Inserted documents =>', insertResult);
+
+  // Read
+  // const findResult = await collection.find({}).toArray();
+  // console.log('Found documents =>', findResult);
+
+ 
 
   return "done";
 }
