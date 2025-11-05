@@ -28,12 +28,16 @@ async function main(){
   // const findResult = await collection.find({}).toArray();
   // console.log('Found documents =>', findResult);
 
-  //Filter
+  // Filter
   // const filteredDocs = await collection.find({ firstName:"Jayeeta" }).toArray();
   // console.log('Found documents filtered by { a: 3 } =>', filteredDocs);
+
   // Update
-  const updateResult = await collection.updateOne({ lastName:"Barman"  }, { $set: { lastName: "Bajpayee" } });
-  console.log('Updated documents =>', updateResult);
+  // const updateResult = await collection.updateOne({ lastName:"Barman"  }, { $set: { lastName: "Bajpayee" } });
+  // console.log('Updated documents =>', updateResult);
+
+  const countResult = await collection.countDocuments({});
+  console.log("Count of documenrs in the User Collection==>",countResult);
 
   return "done";
 }
@@ -53,3 +57,7 @@ main()
   // Create a User
   // Get the connection String
   // Install MongoDB Compass
+  // Create a database
+  // Install mongodb package
+  // Create a connection from code
+  // Documents CRUD - Create, Read, Update, Delete
