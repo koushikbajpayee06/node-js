@@ -12,23 +12,25 @@ async function main(){
   const db = client.db(dbName);
   const collection = db.collection("User");
 
-  Insert
+  // Insert
 
-  const data = {
-    firstName:"Jayeeta",
-    lastName:"Barman",
-    city:"Balurghat",
-    phoneNumber:"9531733485"
-  }
+  // const data = {
+  //   firstName:"Jayeeta",
+  //   lastName:"Barman",
+  //   city:"Balurghat",
+  //   phoneNumber:"9531733485"
+  // }
 
-  const insertResult = await collection.insertMany([data]);
-  console.log('Inserted documents =>', insertResult);
+  // const insertResult = await collection.insertMany([data]);
+  // console.log('Inserted documents =>', insertResult);
 
   // Read
   // const findResult = await collection.find({}).toArray();
   // console.log('Found documents =>', findResult);
 
- 
+  //Filter
+  const filteredDocs = await collection.find({ firstName:"Jayeeta" }).toArray();
+  console.log('Found documents filtered by { a: 3 } =>', filteredDocs);
 
   return "done";
 }
