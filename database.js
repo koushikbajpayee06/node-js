@@ -29,8 +29,11 @@ async function main(){
   // console.log('Found documents =>', findResult);
 
   //Filter
-  const filteredDocs = await collection.find({ firstName:"Jayeeta" }).toArray();
-  console.log('Found documents filtered by { a: 3 } =>', filteredDocs);
+  // const filteredDocs = await collection.find({ firstName:"Jayeeta" }).toArray();
+  // console.log('Found documents filtered by { a: 3 } =>', filteredDocs);
+  // Update
+  const updateResult = await collection.updateOne({ lastName:"Barman"  }, { $set: { lastName: "Bajpayee" } });
+  console.log('Updated documents =>', updateResult);
 
   return "done";
 }
